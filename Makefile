@@ -1,3 +1,9 @@
 docker-build:
-	docker build -t frontend .
+	aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 741957640498.dkr.ecr.us-east-1.amazonaws.com
+	docker build -t 741957640498.dkr.ecr.us-east-1.amazonaws.com/frontend:latest .
+	docker push 741957640498.dkr.ecr.us-east-1.amazonaws.com/frontend:latest
+
+
+
+
 
