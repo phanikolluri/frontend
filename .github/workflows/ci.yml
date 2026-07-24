@@ -10,6 +10,7 @@ jobs:
 
 
   eks-deploy:
+    needs: docker-build
     runs-on: self-hosted
     steps:
       - uses: actions/checkout@v6
