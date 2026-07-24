@@ -3,6 +3,10 @@ docker-build:
 	docker build -t 741957640498.dkr.ecr.us-east-1.amazonaws.com/frontend:latest .
 	docker push 741957640498.dkr.ecr.us-east-1.amazonaws.com/frontend:latest
 
+eks-deploy:
+	aws eks update-kubeconfig --name dev
+	helm upgrade -i  analytics-service helm -f helm/values/frontend.yml
+
 
 
 
