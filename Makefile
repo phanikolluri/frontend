@@ -5,7 +5,7 @@ docker-build:
 
 eks-deploy:
 	aws eks update-kubeconfig --name dev
-	helm upgrade -i  analytics-service helm -f helm/values/frontend.yml
+	helm upgrade -i  frontend helm -f helm/values/frontend.yml
 
 
 
